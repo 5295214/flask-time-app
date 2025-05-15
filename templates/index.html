@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>显示当前时间</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>我的时间网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        .time {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+        .date, .weekday, #weather {
+            font-size: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
-        <h1 class="text-primary mb-4">你好，这是一个时间显示网页</h1>
+<body>
+    <h1>欢迎来到我的网站</h1>
+    <div class="time" id="time">{{ time }}</div>
+    <div class="date">{{ date }}</div>
+    <div class="weekday">{{ weekday }}</div>
+    <div id="weather">{{ weather }}</div>
 
-        <div class="card p-4 shadow">
-            <p><strong>当前时间：</strong> {{ time }}</p>
-            <p><strong>当前日期：</strong> {{ date }}</p>
-            <p><strong>今天是：</strong> {{ weekday }}</p>
-        </div>
-    </div>
+    <button onclick="location.reload()">刷新</button>
 </body>
 </html>
